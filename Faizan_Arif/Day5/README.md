@@ -168,3 +168,30 @@ square 4
     
     kill $(ps aux | grep '[n]ode' | awk '{print $2}')
     
+24. **Write a cron expression that runs a script every weekday at 7:30 AM.**
+
+30 7 * * 1-5 /path/to/script.sh
+
+25. **Monitor CPU and memory usage for the top 5 processes every 5 seconds.**
+watch -n 5 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -6'
+
+
+28. **Write a script that downloads a file from a given URL and checks if the download was successful.**
+
+    * *Use `curl` or `wget`, test exit codes.*
+    
+#!/bin/bash
+wget "$1"
+if [ $? -eq 0 ]; then
+    echo "Download successful."
+else
+    echo "Download failed."
+fi
+
+
+29. **What’s the difference between running `source script.sh` and `./script.sh`? When would you use each?**
+    source script.sh runs the script in the current shell, allowing it to modify the environment (e.g., variables).
+
+    ./script.sh runs the script in a subshell, so changes don't affect the parent shell.
+
+    Use source for environment changes (e.g., .bashrc), and ./script.sh for standalone execution.
