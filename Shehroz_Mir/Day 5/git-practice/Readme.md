@@ -2,3 +2,9 @@
 
   cd ~
   ls -a
+
+**Write a command that counts the number of times the word “error” appears in a file called `server.log`.**
+
+
+$ grep -oi "error" app.log | wc -l
+8
