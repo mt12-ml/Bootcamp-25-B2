@@ -70,7 +70,96 @@ This repo is specify for BootCamp at ML1.
     
     sed -i 's/foo/bar/g' *.txt
     
+11. **Write a script that accepts a filename as an argument and prints how many lines it contains.**
+
+    #!/bin/bash
+if [ -f "$1" ]; then
+    lines=$(wc -l < "$1")
+    echo "The file $1 has $lines lines."
+else
+    echo "File not found!"
+fi
+
+12. **Create a script that checks if a directory exists; if not, it creates it and echoes “Created!”.**
+
+    #!/bin/bash
+if [ ! -d "$1" ]; then
+    mkdir -p "$1"
+    echo "Created!"
+fi
+
+13. **Write a script that takes two numbers from user input and prints their sum.**
+
+    #!/bin/bash
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+sum=$((num1 + num2))
+echo "Sum: $sum"
+
+14. **Modify a script so it logs all output (both stdout and stderr) into a log file named `run.log`.**
+
+    #!/bin/bash
+exec > run.log 2>&1
+# Rest of the script...
+
+15. **Write a script that loops over a list of filenames and prints their line count.**
+
+#!/bin/bash
+for file in "$@"; do
+    lines=$(wc -l < "$file")
+    echo "$file: $lines lines"
+done
     
+### 🌀 Section 4: Conditionals, Loops, and Parameters
+
+16. **Write a script that accepts one argument (a filename). If the file exists and is writable, append “Hello” to it. Otherwise, print an error.**
+
+#!/bin/bash
+if [ -w "$1" ]; then
+    echo "Hello" >> "$1"
+else
+    echo "Error: File does not exist or is not writable."
+fi
+
+17. **Create a `for` loop in a script that prints numbers 1 through 10, but skips 5.**
+
+#!/bin/bash
+for i in {1..10}; do
+    if [ "$i" -ne 5 ]; then
+        echo "$i"
+    fi
+done
+
+18. **Using a `while` loop, create a countdown from 10 to 0, printing one number per second.**
+
+#!/bin/bash
+count=10
+while [ $count -ge 0 ]; do
+    echo "$count"
+    sleep 1
+    ((count--))
+done
+
+19. **Write a script that loops through all `.sh` files in a directory and checks whether each one is executable.**
+
+#!/bin/bash
+for file in *.sh; do
+    if [ -x "$file" ]; then
+        echo "$file is executable."
+    else
+        echo "$file is not executable."
+    fi
+done
+
+20. **Write a function inside a script that returns the square of a given number. Call the function with input 4.**
+
+#!/bin/bash
+square() {
+    echo $(( $1 * $1 ))
+}
+square 4
+    
+
 ### 🧰 Section 5: System and Process Management
 
 21. **Find and kill all running processes named `node`.**
@@ -78,3 +167,4 @@ This repo is specify for BootCamp at ML1.
     * *Use `ps`, `grep`, `awk`, `kill`.*
     
     kill $(ps aux | grep '[n]ode' | awk '{print $2}')
+    
