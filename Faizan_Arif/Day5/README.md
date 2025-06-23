@@ -168,6 +168,12 @@ square 4
     
     kill $(ps aux | grep '[n]ode' | awk '{print $2}')
     
+    
+23. **Create a script that backs up a directory (e.g., `~/projects`) to `~/backup` with a timestamp.**
+    #!/bin/bash
+timestamp=$(date +%Y%m%d_%H%M%S)
+cp -r ~/projects ~/backup/projects_$timestamp
+    
 24. **Write a cron expression that runs a script every weekday at 7:30 AM.**
 
 30 7 * * 1-5 /path/to/script.sh
