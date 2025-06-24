@@ -207,5 +207,22 @@ USAGE:
 	echo $(($1 * $1))
 
 ```
+### 21. Find and kill all running processes named `node`.
+
+	ps aux | grep '[n]ode' | awk '{print $2}' | xargs -r kill -9
+
+### 22. Write a one-liner to check disk usage and alert if it exceeds 90%.
+
+	df -h | awk 'NR>1 {gsub(/%/, "", $5); if ($5 > 90) print "Disk usage on " $1 " is " $5 "% - ALERT!"}'
+
+### 23. Create a script that backs up a directory (e.g., `~/projects`) to `~/backup` with a timestamp.
+
+	
+
+### 24. Write a cron expression that runs a script every weekday at 7:30 AM.
+
+    * *Use `crontab -e`.*
+
+
 
 
