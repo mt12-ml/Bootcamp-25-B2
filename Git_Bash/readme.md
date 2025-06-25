@@ -242,6 +242,9 @@ USAGE:
 **To alias `ll` to `ls -alF`**:  
 Add `alias ll='ls -alF'` in your `.bashrc` file, then run `source ~/.bashrc` to apply immediately.
 
+
+### 29. What’s the difference between running `source script.sh` and `./script.sh`? When would you use each?
+
 **`source script.sh`**: Executes the script in the current shell, so any changes to environment variables or current directory persist after it runs.  
 **`./script.sh`**: Runs the script in a new subshell, so changes do not affect the current shell environment.
 
