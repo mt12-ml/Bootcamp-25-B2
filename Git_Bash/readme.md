@@ -225,4 +225,19 @@ USAGE:
 
 
 
+### 25. Monitor CPU and memory usage for the top 5 processes every 5 seconds.
 
+	watch "ps aux | sort -nrk 3,3 | head -n 5"
+
+### 26. Temporarily change the value of the `PATH` variable in your terminal session to include a folder `~/scripts`.
+
+	 export PATH="$PATH:~/scripts"
+### 27. Explain what `.bashrc` and `.bash_profile` do, and make a small change that aliases `ll` to `ls -alF`.
+
+**`.bashrc`**: Runs every time a new interactive shell starts; used for setting aliases, functions, and environment variables.  
+**`.bash_profile`**: Runs at login; typically sources `.bashrc` to load configurations for login shells.
+
+---
+
+**To alias `ll` to `ls -alF`**:  
+Add `alias ll='ls -alF'` in your `.bashrc` file, then run `source ~/.bashrc` to apply immediately.
