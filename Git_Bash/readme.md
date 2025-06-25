@@ -241,3 +241,9 @@ USAGE:
 
 **To alias `ll` to `ls -alF`**:  
 Add `alias ll='ls -alF'` in your `.bashrc` file, then run `source ~/.bashrc` to apply immediately.
+
+**`source script.sh`**: Executes the script in the current shell, so any changes to environment variables or current directory persist after it runs.  
+**`./script.sh`**: Runs the script in a new subshell, so changes do not affect the current shell environment.
+
+**When to use each**:  
+Use `source` when you want the script to modify your current shell environment (e.g., set variables). Use `./script.sh` to run the script independently without affecting your current shell.
