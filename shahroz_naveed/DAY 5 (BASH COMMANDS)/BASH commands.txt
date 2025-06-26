@@ -1,0 +1,233 @@
+<---------------------------------------------------------------------------------->
+
+PATTERN OF THIS TEXT:  FIRST COMMAND IS WRIITEN AND THEN IT'S QUESTION
+
+<---------------------------------------------------------------------------------->
+
+
+grep -r "" | awk '/User=/ {print $4}'
+
+## this commands shows all the users recursively
+
+grep -r "ERROR"
+
+## this shows all the files have content "ERROR"
+
+name="shahroz"
+
+echo "Hello, $name"
+
+mkdir test
+
+cd test
+
+touch notes.txt
+
+## Create a directory named test, move into it, and create a file named notes.txt
+
+
+cd /c/Users/Microsoft
+ls -a
+
+## this command will navigate to your home directory, then list all hidden files. Which ones are commonly used for configuration
+
+
+mkdir projects
+cd projects
+nano readme.md
+
+## Create a directory named `projects`, then create a file called `README.md` inside it with the text “My Projects”.
+
+chmod 744 copy_logs.sh 
+
+## Change the permissions of a file `script.sh` to make it executable only by the owner and group and others can read only.
+
+cp *.txt backup/
+
+## Copy all `.txt` files from the current directory into a folder named `backup`. If it doesn’t exist, create it.
+
+cd /var/log
+find . -name '*.log'
+
+## Write a one-liner that finds all `.log` files under the `/var/log` directory
+
+find . -name "server.logs" | xargs grep -i "error" | wc -l
+
+## Write a command that counts the number of times the word “error” appears in a file called `server.log`
+
+cut -d "," -f 3 data.csv
+
+
+## Print the third column from a CSV file named `data.csv`, assuming it’s comma-delimited.
+
+tail -f /test/logs/app.log | grep --color=always "Failed"
+
+## Tail a growing log file (`/var/log/syslog`) but also highlight lines that contain the word “failed”.
+
+
+sed 's/foo/bar/' *.txt
+
+## Replace all occurrences of the word "foo" with "bar" in all `.txt` files in the current directory.
+
+
+cut -d ',' -f 3 data.csv
+
+## Print the third column from a CSV file named `data.csv`, assuming it’s comma-delimited.
+
+
+
+tail -f test/logs/app.log | grep --color=always "FAILED"
+
+## tail the growing logs and highlight the word failed with grep
+
+sed 's/foo/bar/g' notes.txt
+
+## Replace all occurrences of the word "foo" with "bar" in all `.txt` files in the current directory.
+
+
+
+  
+    #!/bin/bash
+    # Your logic here
+    ```#!/bin/bash
+Usage: ./script.sh filename.txt
+
+if [[ -f "$1" ]]; then
+  lines=$(wc -l < "$1")
+  echo "The file has $lines lines."
+else
+  echo "File not found."
+fi
+
+## Write a script that accepts a filename as an argument and prints how many lines it contains.
+
+
+#!/bin/bash
+#Usage: ./script.sh dirname
+
+if [[ -d "$1" ]]; then
+  echo "Directory already exists."
+else
+  mkdir "$1"
+  echo "Created!"
+fi
+
+## Create a script that checks if a directory exists; if not, it creates it and echoes “Created!”
+
+
+#!/bin/bash
+
+read -p "Enter first number: " a
+read -p "Enter second number: " b
+
+sum=$((a + b))
+echo "Sum is: $sum"
+
+
+
+## Write a script that takes two numbers from user input and prints their sum.
+
+
+
+#!/bin/bash
+# Usage: ./script.sh file1.txt file2.txt ...
+
+for file in "$@"
+do
+  if [[ -f "$file" ]]; then
+    echo -n "$file: "
+    wc -l < "$file"
+  else
+    echo "$file: File not found"
+  fi
+done
+
+
+## Write a script that loops over a list of filenames and prints their line count.
+
+
+
+#!/bin/bash
+# Usage: ./script.sh filename.txt
+
+if [[ -w "$1" ]]; then
+  echo "Hello" >> "$1"
+  echo "Appended Hello to $1"
+else
+  echo "Error: File does not exist or is not writable."
+fi
+
+
+## Write a script that accepts one argument (a filename). If the file exists and is writable, append “Hello” to it. Otherwise, print an error.
+
+
+#!/bin/bash
+
+for i in {1..10}
+do
+  if [[ "$i" -eq 5 ]]; then
+    continue
+  fi
+  echo "$i"
+done
+
+
+## Create a `for` loop in a script that prints numbers 1 through 10, but skips 5.
+
+#!/bin/bash
+
+i=10
+while [ $i -ge 0 ]
+do
+  echo $i
+  sleep 1
+  ((i--))
+done
+
+
+## Using a `while` loop, create a countdown from 10 to 0, printing one number per second.
+
+
+#!/bin/bash
+
+for file in *.sh
+do
+  if [[ -x "$file" ]]; then
+    echo "$file is executable"
+  else
+    echo "$file is not executable"
+  fi
+done
+
+
+
+## Write a script that loops through all `.sh` files in a directory and checks whether each one is executable.
+
+
+#!/bin/bash
+
+square() {
+  echo $(($1 * $1))
+}
+
+square 4
+
+
+## Write a function inside a script that returns the square of a given number. Call the function with input 4
+
+
+ps aux | grep node | awk '{print$2}' | xargs kill -9
+
+## Find and kill all running processes named `node`.
+
+df | awk '{usage=$5; sub("%","",usage); if (usage > 90) print "Alert:", $6, "is above 90% used (" usage "%)"}'
+
+## Write a one-liner to check disk usage and alert if it exceeds 90%.
+
+watch -n "ps aux --sort=%cpu | head -6"
+
+## Monitor CPU and memory usage for the top 5 processes every 5 seconds
+
+30 7 * * 1-5 script1.sh
+
+## Write a cron expression that runs a script every weekday at 7:30 AM
