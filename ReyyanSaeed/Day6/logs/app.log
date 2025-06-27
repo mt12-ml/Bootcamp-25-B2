@@ -1,0 +1,13 @@
+[2025-06-23 13:30:42] [INFO] User=admin IP=31.181.91.167 Action=login
+[2025-06-23 13:30:42] [WARNING] User=admin IP=232.163.16.133 Action=login
+[2025-06-23 13:30:42] [WARNING] User=charlie IP=95.68.48.13 Action=login
+[2025-06-23 13:30:42] [WARNING] User=bob IP=37.253.96.144 Action=login
+[2025-06-23 13:30:42] [INFO] User=bob IP=218.67.253.237 Action=login
+[2025-06-23 13:30:42] [DEBUG] User=bob IP=43.65.81.167 Action=login
+[2025-06-23 13:30:42] [DEBUG] User=charlie IP=190.241.248.116 Action=login
+[2025-06-23 13:30:42] [WARNING] User=charlie IP=233.149.160.35 Action=login
+[2025-06-23 13:30:42] [DEBUG] User=charlie IP=5.69.217.13 Action=login
+[2025-06-23 13:30:42] [WARNING] User=charlie IP=79.71.216.175 Action=login
+[2025-06-23 13:30:42] [ERROR] User=alice IP=43.122.205.36 Action=login
+[2025-06-23 13:30:42] [INFO] User=bob IP=152.34.151.3 Action=login
+[2025-06-23 13:30:42] [DEBUG] User=bob IP=109.65.45.0 Action=login
