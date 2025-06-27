@@ -1,2 +1,0 @@
-This is a UTF-16 encoded file
-With some special characters: éüñ
