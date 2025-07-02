@@ -1,0 +1,17 @@
+🧩 Bash Problem Set
+
+🟢 Beginner Level
+Print Your Name
+Write a script that stores your name in a variable and prints:
+"Hello, [YourName]!"
+
+Create and Navigate
+Create a directory named practice, move into it, and create a file named notes.txt.
+
+
+🟡 Intermediate Level
+Find .txt Files:
+List all .txt files in the current directory and subdirectories.
+
+Backup Script:
+Create a script that copies all .log files from /var/log (or a mock folder) to a backup/ directory with a timestamp.

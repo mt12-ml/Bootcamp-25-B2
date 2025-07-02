@@ -1,0 +1,24 @@
+1.Command for searching through the Logfile
+        grep -o 'User=[^ ]*' *.log | cut -d'=' -f2 | sort | uniq
+
+OUTPUT:
+
+        admin
+        alice
+        bob
+        charlie
+        root
+
+2. Finding [ERROR] in the Log files:
+        grep '\[ERROR\]' *.log
+OUTPUT:
+
+        app.log:[2025-07-02 23:57:41] [ERROR] User=admin IP=157.89.135.38 Action=login
+        auth.log:[2025-07-02 23:57:39] [ERROR] User=charlie IP=37.66.21.5 Action=login
+        auth.log:[2025-07-02 23:57:39] [ERROR] User=root IP=181.211.82.189 Action=login
+        auth.log:[2025-07-02 23:57:39] [ERROR] User=alice IP=252.16.105.52 Action=login
+        auth.log:[2025-07-02 23:57:41] [ERROR] User=root IP=133.17.17.17 Action=login
+        auth.log:[2025-07-02 23:57:41] [ERROR] User=bob IP=163.144.18.92 Action=login
+        system.log:[2025-07-02 23:57:40] [ERROR] User=alice IP=64.246.1.146 Action=login
+        system.log:[2025-07-02 23:57:41] [ERROR] User=admin IP=245.198.4.214 Action=login
+
