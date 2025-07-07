@@ -1,0 +1,7 @@
+#write sample data of 10 lines in csv format
+id,name,age,city 
+1,John Doe,28,New York
+2,Jane Smith,34,Los Angeles
+3,Bob Johnson,45,Chicago
+4,Alice Brown,29,New York
+5,Charlie White,38,Houston

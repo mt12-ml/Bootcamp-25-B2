@@ -1,0 +1,9 @@
+Section -2:
+1.
+    grep -o -i 'error' server.log | wc -l
+
+2.
+    awk -F',' '{print $3}' data.csv
+
+3.
+    history | awk '{CMD[$2]++} END {for (k in CMD) print CMD[k], k}' | sort -nr | head -10
