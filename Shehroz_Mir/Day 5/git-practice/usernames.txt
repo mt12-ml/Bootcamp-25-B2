@@ -1,6 +1,0 @@
-$USER
-admin
-alice
-bob
-charlie
-root

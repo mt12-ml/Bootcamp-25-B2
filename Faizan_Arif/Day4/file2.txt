@@ -1,4 +1,0 @@
-First line
-Second line
-Third line
-Extra line in file2
